@@ -1,0 +1,137 @@
+tất cả : 121
+bán hàng: 113
+hành chính văn phòng : 120
+IT phần mềm : 146
+kế toán - kiểm toán : 118
+kỹ thuật : 149
+marketng : 116
+nhân viên kkinh doanh  : 159
+tư vấn : 178
+xây dựng : 117
+y tế : 180
+an ninh bảo vệ : 122
+báo chí truyền hình : 123
+bảo hiểm : 124
+biên dịch : 125
+bưu chính :126
+chứng khoáng - vàng : 127
+cơ khí chế tạo : 128
+công nghệ cao : 129
+công nghiệp : 130
+dầu khí - hóa chất : 131
+dệt may : 132
+dịch vụ : 133
+du lịch : 134
+điện tử : 136
+điện tử viễn thông : 135
+game : 137
+giáo dục dào tạo : 138
+hàng gia dụng : 139
+hàng hải : 140
+hàng không : 141
+hóa học sinh học : 142
+hoạch đinh dự án : 143
+in ấn xuất bản : 144
+it phần cứng : 145
+kinh doanh bds : 121
+khách sạn nhà hàng 115
+kho vận vật tư : 147
+kiến trúc nội thât : 148
+kỹ thuật ứng dụng : 150
+làm bán thời gian : 151
+lao động phổ thông : 152
+mỹ phẩm trang sức : 153
+ngân hàng : 154
+ngành nghề khác : 155
+nghệ thuật điện ảnh: 156
+ngoại thương : 157
+người giúp việc : 158
+nhân sự : 119
+nông nghiệp - lâm nghiệp : 160
+nv trông quán Internet : 161
+ô tô xe máy : 162
+pháp luật : 163
+promotion girl : 164
+quan hệ đối ngoại : 165
+quản trị kinh doanh :114
+sinh viên làm thêm :166
+tài chính đầu tư : 167
+thiết kế mỹ thuật :169
+thời trang : 170
+thủ công mỹ thuật : 171
+thư kí : 172
+thực phẩm : 173
+thực tập : 174
+thương mại điện tử :175
+vận tải : 179
+tổ chức sự kiện : 177
+tiếp thị : 176
+
+tỉnh
+tp hcm : 122
+hà nội :73
+an giang : 129
+bà rịa : 121
+bắc cạn : 76
+bắc giang : 87
+bạc liêu : 134
+bắc ninh : 90
+bến tre : 125
+bình dương : 119
+bình định : 107
+bình phước : 117
+bình thuận : 111
+cà mau : 135
+cần thơ : 131
+cao bằng : 75
+đà nẵng : 104
+đắk lắk : 114
+đăk nông : 115
+điện biên : 79
+đồng nai : 120
+đồng tháp : 128
+gia lai : 113
+hà giang : 74
+hà nam : 95
+hà tĩnh : 100
+hải dương : 91
+hải phòng : 92
+hậu giang : 132
+hòa bình : 83
+hưng yên : 93
+khánh hòa : 109
+kiên giang : 130
+kom tum : 112
+lai châu : 80
+lâm đồng : 116
+lạng sơm : 85
+lào cai : 78
+long an : 123
+nam định : 96
+nghệ an : 99
+ninh bình : 97
+ninh thuận : 110
+nước ngoài : 140
+phú thọ : 88
+phú yên : 108
+quản bình : 101
+quãng nam : 105
+quãng ngãi : 106
+quãng ninh : 86
+quãng trị : 103
+sóc trăng : 133
+sơn la : 81
+tây tinh : 118
+thái bình : 94
+thái nguyên : 84
+thanh hóa : 98
+thừa thiên huế : 103
+tiền giang : 124
+toàn quốc : 136
+trà vinh : 126
+tuyên quang : 77
+vĩnh long : 127
+vĩnh phúc : 89
+yên bái : 82
+
+
