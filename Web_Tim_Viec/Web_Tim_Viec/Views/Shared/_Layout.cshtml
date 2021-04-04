@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm Việc</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/css/index.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+    <div class="header">
+        <div class="navbarHeader">
+            <div class="logo">
+                <img src="~/css/logo.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="formSearch-wrapper">
+            @using (Html.BeginForm("Index", "TimViec"))
+            {
+                <div class="formSearch">
+                    <input type="text" name="inputNameWork"
+                           placeholder="Nhập tiêu đề, công ty, địa điểm,..." />
+                    <select name="optionWork" id="">
+                        <option value="1">BE</option>
+                        <option value="2">FE</option>
+                    </select>
+                    <select name="optionCity" id="">
+                        <option value="1">HCM</option>
+                        <option value="2">HN</option>
+                    </select>
+                    <input class="buttonSearch" type="submit" value="Tìm Việc" style="width: 204px !important">
+                </div>
+            }
+
+        </div>
+        @RenderBody()
+        
+    </div>
+    <div class="footer"></div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
