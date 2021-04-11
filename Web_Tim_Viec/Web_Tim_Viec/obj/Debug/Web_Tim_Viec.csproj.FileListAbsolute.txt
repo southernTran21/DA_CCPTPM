@@ -162,3 +162,7 @@ C:\Users\TRUONG\Desktop\công cụ\DA_CCPTPM\Web_Tim_Viec\Web_Tim_Viec\obj\Debug
 C:\Users\TRUONG\Desktop\công cụ\DA_CCPTPM\Web_Tim_Viec\Web_Tim_Viec\obj\Debug\Web_Tim_Viec.csproj.CopyComplete
 C:\Users\TRUONG\Desktop\công cụ\DA_CCPTPM\Web_Tim_Viec\Web_Tim_Viec\obj\Debug\Web_Tim_Viec.dll
 C:\Users\TRUONG\Desktop\công cụ\DA_CCPTPM\Web_Tim_Viec\Web_Tim_Viec\obj\Debug\Web_Tim_Viec.pdb
+D:\DA\DA_CCPTPM\Web_Tim_Viec\Web_Tim_Viec\bin\EntityFramework.dll
+D:\DA\DA_CCPTPM\Web_Tim_Viec\Web_Tim_Viec\bin\EntityFramework.SqlServer.dll
+D:\DA\DA_CCPTPM\Web_Tim_Viec\Web_Tim_Viec\bin\EntityFramework.xml
+D:\DA\DA_CCPTPM\Web_Tim_Viec\Web_Tim_Viec\bin\EntityFramework.SqlServer.xml

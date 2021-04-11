@@ -16,7 +16,7 @@ namespace Web_Tim_Viec
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "TimViec", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "TimViec", action = "showData", id = UrlParameter.Optional }
             );
         }
     }

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Web_Tim_Viec.Models.infomationWork>
+
+@{
+    ViewBag.Title = "showData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="formSearch-wrapper">
+    @using (Html.BeginForm("showData", "TimViec", FormMethod.Get))
+    {
+        <div class="formSearch">
+            <input type="text" name="inputSearch" style="width: 881px !important"
+                   placeholder="Nhập tiêu đề, công ty, địa điểm,..." />
+            <input class="buttonSearch" type="submit" value="Tìm Việc" style="width: 204px !important">
+        </div>
+    }
+</div>
+
+<h4>@ViewBag.tuKhoaTimKiem</h4>
+
+<div class="resultSearch">
+    @foreach (var item in Model)
+    {
+        <div class="resultItem">
+            <div class="resultName">
+                <a href="@item.href" style="font-size: 17px; width: 630px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">@item.nameWork</a>
+                <span>@item.nameCompany</span>
+            </div>
+            <div class="resultSalary">
+                <img src="~/css/money.svg" style="width:20px; height:20px" />
+                <span style="font-size: 12px; margin-top: 10px">@item.salary</span>
+            </div>
+            <div class="resultTinh">
+                <img src="~/css/pin.svg" style="width:20px; height:20px" />
+                <span style="font-size: 12px;margin-top: 10px;width: 140px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;text-align: center;">@item.country</span>
+            </div>
+            <div class="resultDate">
+                <img src="~/css/clock.svg" style="width:20px; height:20px" />
+                <span style="font-size: 12px; margin-top: 10px">@item.date</span>
+            </div>
+        </div>
+    }
+</div>

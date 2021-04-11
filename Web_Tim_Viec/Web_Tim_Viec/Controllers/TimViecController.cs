@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
@@ -26,8 +27,50 @@ namespace Web_Tim_Viec.Controllers
             List<dataRecord> list = new List<dataRecord>();
             if (inputNameWork == "")
             {
-                list = querySelection("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids[]=113&province_ids[]=103");
-                ViewBag.Quantity = getQuantityResult("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids[]=113&province_ids[]=103");
+
+                if (optionWork == "0" && optionCity == "0")
+                {
+                    list = querySelection("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids&province_ids&q=");
+                    ViewBag.Quantity = getQuantityResult("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids&province_ids&q=");
+                }
+                else if (optionWork == "0")
+                {
+                    list = querySelection("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids&province_ids[]=" + optionCity + "&q=");
+                    ViewBag.Quantity = getQuantityResult("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids&province_ids[]=" + optionCity + "&q=");
+                }
+                else if (optionCity == "0")
+                {
+                    list = querySelection("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids[]=" + optionWork + "&province_ids&q=");
+                    ViewBag.Quantity = getQuantityResult("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids[]=" + optionWork + "&province_ids&q=");
+                }
+            }
+            else
+            {
+                string input = inputNameWork.Replace(" ", "%");
+                if (optionWork == "0" && optionCity == "0")
+                {
+                    list = querySelection("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids&province_ids&q=" + input);
+                    ViewBag.Quantity = getQuantityResult("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids&province_ids&q=" + input);
+                    ViewBag.tuKhoaTimKiem = "Từ Khóa Tìm Kiếm: " + inputNameWork;
+                }
+                else if (optionWork == "0")
+                {
+                    list = querySelection("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids&province_ids[]=" + optionCity + "&q=" + input);
+                    ViewBag.Quantity = getQuantityResult("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids&province_ids[]=" + optionCity + "&q=" + input);
+                    ViewBag.tuKhoaTimKiem = "Từ Khóa Tìm Kiếm: " + inputNameWork;
+                }
+                else if (optionCity == "0")
+                {
+                    list = querySelection("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids[]=" + optionWork + "&province_ids&q=" + input);
+                    ViewBag.Quantity = getQuantityResult("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids[]=" + optionWork + "&province_ids&q=" + input);
+                    ViewBag.tuKhoaTimKiem = "Từ Khóa Tìm Kiếm: " + inputNameWork;
+                }
+                else
+                {
+                    list = querySelection("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids[]=" + optionWork + "&province_ids[]=" + optionCity + "&q=" + input);
+                    ViewBag.Quantity = getQuantityResult("https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?field_ids[]=" + optionWork + "&province_ids[]=" + optionCity + "&q=" + input);
+                    ViewBag.tuKhoaTimKiem = "Từ Khóa Tìm Kiếm: " + inputNameWork;
+                }
             }
             return View(list);
         }
@@ -97,6 +140,91 @@ namespace Web_Tim_Viec.Controllers
             HtmlNode[] nodeQuantity = document.DocumentNode.SelectNodes("//div[@class='ttl-line-left font700 my-1 case-unset-mb']").ToArray();
             i = nodeQuantity[0].InnerText;
             return i;
+        }
+
+        [HttpGet]
+        public ActionResult getAndSaveData()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult getAndSaveData(string inputURL)
+        {
+            viecLamEntities db = new viecLamEntities();
+            if (inputURL == "")
+            {
+                ViewBag.ThongBao = "Bạn cần phải nhập URL để lấy dữ liệu";
+            }
+            else
+            {
+                
+
+
+                try
+                {
+                    List<dataRecord> list = new List<dataRecord>();
+                    list = querySelection(inputURL);
+
+
+                    for (int i = 0; i < list.Count; i++)
+                    {
+
+                        infomationWork work = new infomationWork();
+
+                        work.nameWork = list[i].name.ToString();
+                        work.nameCompany = list[i].nameCompany.ToString();
+                        work.href = list[i].href.ToString();
+                        work.salary = list[i].salary.ToString();
+                        work.country = list[i].country.ToString();
+                        work.date = list[i].date.ToString();
+
+
+
+
+                        db.infomationWork.Add(work);
+
+                        db.SaveChanges();
+
+                    }
+
+                    ViewBag.ThongBao = "Thanh Cong";
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Response.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+
+
+
+            }
+
+
+            return View();
+        }
+
+        public ActionResult showData(String inputSearch)
+        {
+            viecLamEntities db = new viecLamEntities();
+
+
+            if (inputSearch != null)
+            {
+                ViewBag.tuKhoaTimKiem = "Từ Khóa Tìm Kiếm: " +inputSearch;
+                return View(db.infomationWork.Where(x => x.nameWork.StartsWith(inputSearch)));
+            }
+
+            List<infomationWork> list = db.infomationWork.ToList();
+            return View(list);
+
+
+
         }
 
     }

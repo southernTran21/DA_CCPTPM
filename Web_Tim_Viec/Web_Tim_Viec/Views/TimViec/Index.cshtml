@@ -4,6 +4,158 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="formSearch-wrapper">
+    @using (Html.BeginForm("Index", "TimViec"))
+    {
+        <div class="formSearch">
+            <input type="text" name="inputNameWork"
+                   placeholder="Nhập tiêu đề, công ty, địa điểm,..." />
+            <select name="optionWork" id="">
+                <option value="0">Tất cả ngành nghề</option>
+                <option value="113">Bán hàng</option>
+                <option value="120">Hành chính - Văn phòng</option>
+                <option value="146">IT phần mềm</option>
+                <option value="118">Kế toán - Kiểm toán</option>
+                <option value="149">Kỹ thuật</option>
+                <option value="116">Marketing - PR</option>
+                <option value="159">Nhân viên kinh doanh</option>
+                <option value="178">Tư vấn</option>
+                <option value="117">Xây dựng</option>
+                <option value="180">Y tế - Dược</option>
+                <option value="122">An ninh - Bảo vệ</option>
+                <option value="123">Báo chí - Truyền hình</option>
+                <option value="124">Bảo hiểm</option>
+                <option value="125">Biên - Phiên dịch</option>
+                <option value="126">Bưu chính</option>
+                <option value="127">Chứng khoán - Vàng</option>
+                <option value="128">Cơ khí - Chế tạo</option>
+                <option value="129">Công nghệ cao</option>
+                <option value="130">Công nghiệp</option>
+                <option value="131">Dầu khí - Hóa chất</option>
+                <option value="132">Dệt may - Da giày</option>
+                <option value="133">Dịch vụ</option>
+                <option value="134">Du lịch</option>
+                <option value="136">Điện - Điện tử - Điện lạnh</option>
+                <option value="135">Điện tử viễn thông</option>
+                <option value="137">Game</option>
+                <option value="138">Giáo dục - Đào tạo</option>
+                <option value="139">Hàng gia dụng</option>
+                <option value="140">Hàng hải</option>
+                <option value="141">Hàng không</option>
+                <option value="142">Hoá học - Sinh học</option>
+                <option value="143">Hoạch định dự án</option>
+                <option value="144">In ấn - Xuất bản</option>
+                <option value="145">IT phần cứng/mạng</option>
+                <option value="121">KD bất động sản</option>
+                <option value="115">Khách sạn - Nhà hàng</option>
+                <option value="147">Kho vận - Vật tư</option>
+                <option value="148">Kiến trúc - TK nội thất</option>
+                <option value="150">Kỹ thuật ứng dụng</option>
+                <option value="151">Làm bán thời gian</option>
+                <option value="152">Lao động phổ thông</option>
+                <option value="153">Mỹ phẩm - Trang sức</option>
+                <option value="154">Ngân hàng</option>
+                <option value="155">Ngành nghề khác</option>
+                <option value="156">Nghệ thuật - Điện ảnh</option>
+                <option value="157">Ngoại thương - Xuất nhập khẩu</option>
+                <option value="158">Người giúp việc</option>
+                <option value="119">Nhân sự</option>
+                <option value="160">Nông - Lâm - Ngư nghiệp</option>
+                <option value="161">NV trông quán Internet</option>
+                <option value="162">Ô tô - Xe máy</option>
+                <option value="163">Pháp lý - Luật</option>
+                <option value="164">Promotion Girl</option>
+                <option value="165">Quan hệ đối ngoại</option>
+                <option value="114">Quản trị kinh doanh</option>
+                <option value="166">Sinh viên làm thêm</option>
+                <option value="167">Tài chính - Đầu tư</option>
+                <option value="169">Thiết kế - Mỹ thuật</option>
+                <option value="168">Thiết kế đồ hoạ - web</option>
+                <option value="170">Thời trang</option>
+                <option value="171">Thủ công mỹ nghệ</option>
+                <option value="172">Thư ký - Trợ lý</option>
+                <option value="173">Thực phẩm - Đồ uống</option>
+                <option value="174">Thực tập</option>
+                <option value="175">Thương mại điện tử</option>
+                <option value="176">Tiếp thị - Quảng cáo</option>
+                <option value="177">Tổ chức sự kiện - Quà tặng</option>
+                <option value="179">Vận tải - Lái xe</option>
+            </select>
+            <select name="optionCity" id="">
+                <option value="0">Tất cả Tỉnh thành</option>
+                <option value="122">TP.HCM</option>
+                <option value="73">Hà Nội</option>
+                <option value="129">An Giang</option>
+                <option value="121">Bà Rịa - Vũng Tàu</option>
+                <option value="76">Bắc Cạn</option>
+                <option value="87">Bắc Giang</option>
+                <option value="134">Bạc Liêu</option>
+                <option value="90">Bắc Ninh</option>
+                <option value="125">Bến Tre</option>
+                <option value="119">Bình Dương</option>
+                <option value="107">Bình Định</option>
+                <option value="117">Bình Phước</option>
+                <option value="111">Bình Thuận</option>
+                <option value="135">Cà Mau</option>
+                <option value="131">Cần Thơ</option>
+                <option value="75">Cao Bằng</option>
+                <option value="104">Đà Nẵng</option>
+                <option value="114">Đắk Lắk</option>
+                <option value="115">Đắk Nông</option>
+                <option value="79">Điện Biên</option>
+                <option value="120">Đồng Nai</option>
+                <option value="128">Đồng Tháp</option>
+                <option value="113">Gia Lai</option>
+                <option value="74">Hà Giang</option>
+                <option value="95">Hà Nam</option>
+                <option value="100">Hà Tĩnh</option>
+                <option value="91">Hải Dương</option>
+                <option value="92">Hải Phòng</option>
+                <option value="132">Hậu Giang</option>
+                <option value="83">Hòa Bình</option>
+                <option value="93">Hưng Yên</option>
+                <option value="109">Khánh Hòa</option>
+                <option value="130">Kiên Giang</option>
+                <option value="112">Kon Tum</option>
+                <option value="80">Lai Châu</option>
+                <option value="116">Lâm Đồng</option>
+                <option value="85">Lạng Sơn</option>
+                <option value="78">Lào Cai</option>
+                <option value="123">Long An</option>
+                <option value="96">Nam Định</option>
+                <option value="99">Nghệ An</option>
+                <option value="97">Ninh Bình</option>
+                <option value="110">Ninh Thuận</option>
+                <option value="140">Nước ngoài</option>
+                <option value="88">Phú Thọ</option>
+                <option value="108">Phú Yên</option>
+                <option value="101">Quảng Bình</option>
+                <option value="105">Quảng Nam</option>
+                <option value="106">Quảng Ngãi</option>
+                <option value="86">Quảng Ninh</option>
+                <option value="103">Quảng Trị</option>
+                <option value="133">Sóc Trăng</option>
+                <option value="81">Sơn La</option>
+                <option value="118">Tây Ninh</option>
+                <option value="94">Thái Bình</option>
+                <option value="84">Thái Nguyên</option>
+                <option value="98">Thanh Hóa</option>
+                <option value="103">Thừa Thiên Huế</option>
+                <option value="124">Tiền Giang</option>
+                <option value="136">Toàn quốc</option>
+                <option value="126">Trà Vinh</option>
+                <option value="77">Tuyên Quang</option>
+                <option value="127">Vĩnh Long</option>
+                <option value="89">Vĩnh Phúc</option>
+                <option value="82">Yên Bái</option>
+            </select>
+            <input class="buttonSearch" type="submit" value="Tìm Việc" style="width: 204px !important">
+        </div>
+    }
+</div>
+
+<h3>@ViewBag.tuKhoaTimKiem</h3>
+
 <div class="numberResultSearch">
     <span>@ViewBag.Quantity</span>
 </div>

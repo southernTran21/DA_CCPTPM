@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "getAndSaveData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lấy Dữ liệu</h2>
+
+<div class="formSearch-wrapper">
+    @using (Html.BeginForm("getAndSaveData", "TimViec"))
+    {
+        <div class="formSearch">
+            <input type="text" name="inputURL" style="width: 881px !important"
+                   placeholder="Nhập url bạn muốn lấy dữ liệu" />
+            <input class="buttonSearch" type="submit" value="Tìm Việc" style="width: 204px !important">
+        </div>
+    }
+</div>
+
+<h3>@ViewBag.ThongBao</h3>
